@@ -1,1 +1,10 @@
 panadas
+numpy
+scikit-learn
+mlflow
+joblib
+os
+matplotlib
+Flask
+FLask-Cors
+python-box
