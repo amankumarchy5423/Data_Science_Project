@@ -1,0 +1,7 @@
+data_root : data
+
+data_injuction : 
+  root_dir : data/data_injection
+  source_url : https://github.com/krishnaik06/datasets/raw/refs/heads/main/winequality-data.zip
+  output_zip : data/data_injection/data.zip
+  output : data/data_injection

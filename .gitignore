@@ -1,2 +1,5 @@
 .venv/
 src/datascience/logs/
+research/
+data/
+__pycache__/
