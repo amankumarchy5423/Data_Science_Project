@@ -2,6 +2,7 @@ from src.datascience.utils.common import load_yaml,create_directory
 from src.datascience.config import *
 from src.datascience.entity.config_entity import data_injection
 from src.datascience.entity.config_entity import DataValidationfirst
+from src.datascience.entity.config_entity import data_trans_dataclass
 
 
 class data_manager():
@@ -40,20 +41,7 @@ class DataValidations_yaml_manager :
 
 
         create_directory([self.loader_1.data_validation["root_dir"]])
-    # def DataValidation_load_yaml(self) -> DataValidationfirst:
-    #     # loader = self.loader_1
-    #     print("now the termpoint")
-    #     out = DataValidationfirst(
-    #         root_dir=self.loader_1.data_validation["root_dir"],
-    #         injuction_data_csv = self.loader_1.data_validation["injuction_data_csv"],
-    #         output_report = self.loader_1.data_validation["output_report"],
-    #         all_schema = self.loader_2.columns.input_col
-            # root_dir=loader.data_validation['root_dir'],
-            # injuction_data_csv = loader.data_validation['injusion_data_csv'],
-            # output_report = loader.data_validation['output_report'],
-            # all_schema = self.loder_2.columns['input_col']
-
-        # )
+    
     def DataValidation_load_yaml(self) -> DataValidationfirst :
             return DataValidationfirst(root_dir=self.loader_1.data_validation["root_dir"],
                               injuction_data_csv = self.loader_1.data_validation["injuction_data_csv"],
@@ -62,3 +50,27 @@ class DataValidations_yaml_manager :
                               )
         # print("all set")
         # return out
+
+
+class data_trans_loadyaml:
+    def __init__(
+            self,
+            config = CONFIG_YAML_FILE_PATH,
+            param = PARAM_YAML_FILE_PATH,
+            schema = SCHEMA_YAML_FILE_PATH
+    ):
+        self.config = load_yaml(config)
+        self.param = load_yaml(param)
+        self.schema = load_yaml(schema)
+
+    def data_trans_attribute(self) -> data_trans_dataclass :
+        create_directory([self.config.data_transformation['output']])
+        return data_trans_dataclass (
+            input = self.config.data_transformation['input'],
+            output = self.config.data_transformation['output']
+            
+        )
+
+        
+        
+        

@@ -10,3 +10,9 @@ data_validation :
   root_dir : data/data_validation
   injuction_data_csv : data/data_injection/winequality-red.csv
   output_report : data/data_validation/script.txt
+
+data_transformation :
+  input : data/data_injection/winequality-red.csv
+  output : data/data_transformation
+  
+  

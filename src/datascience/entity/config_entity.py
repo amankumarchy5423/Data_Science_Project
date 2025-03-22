@@ -17,3 +17,8 @@ class DataValidationfirst():
     output_report : Path
     all_schema : dict
 
+@dataclass
+class data_trans_dataclass:
+    input : Path
+    output : Path
+   
