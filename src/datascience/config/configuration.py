@@ -3,6 +3,7 @@ from src.datascience.config import *
 from src.datascience.entity.config_entity import data_injection
 from src.datascience.entity.config_entity import DataValidationfirst
 from src.datascience.entity.config_entity import data_trans_dataclass
+from src.datascience.entity.config_entity import model_train_dataclass
 
 
 class data_manager():
@@ -69,6 +70,29 @@ class data_trans_loadyaml:
             input = self.config.data_transformation['input'],
             output = self.config.data_transformation['output']
             
+        )
+
+
+class model_train_dataload:
+    def __init__(self,
+                 config = CONFIG_YAML_FILE_PATH,
+                 params = PARAM_YAML_FILE_PATH,
+                 schema = SCHEMA_YAML_FILE_PATH):
+        self.config = load_yaml(config)
+        self.params = load_yaml(params)
+        self.schema = load_yaml(schema)
+        create_directory([self.config.model_train['root_dir']])
+
+    def model_train_entity(self) -> model_train_dataclass :
+        return model_train_dataclass (
+            root_dir = self.config.model_train['root_dir'],
+            train_data = self.config.model_train['train_data'],
+            test_data = self.config.model_train['test_data'],
+            model_out = self.config.model_train['model_out'],
+            alpha= self.params.ElasticNet['alpha'],
+            l1_ratio=self.params.ElasticNet['l1_ratio'],
+            input_col = self.schema.columns['input_col'].keys(),
+            output_col = self.schema.columns["output_col"].keys()
         )
 
         

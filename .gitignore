@@ -3,3 +3,4 @@ src/datascience/logs/
 research/
 data/
 __pycache__/
+models/

@@ -22,3 +22,13 @@ class data_trans_dataclass:
     input : Path
     output : Path
    
+@dataclass
+class model_train_dataclass:
+    root_dir : str
+    train_data : Path
+    test_data : Path
+    model_out : Path
+    alpha : float
+    l1_ratio : float
+    input_col : None
+    output_col :None

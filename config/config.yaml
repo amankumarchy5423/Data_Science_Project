@@ -15,4 +15,8 @@ data_transformation :
   input : data/data_injection/winequality-red.csv
   output : data/data_transformation
   
-  
+model_train :
+  root_dir : models
+  train_data : data/data_transformation/train.csv
+  test_data : data/data_transformation/test.csv
+  model_out : models/model.pkl

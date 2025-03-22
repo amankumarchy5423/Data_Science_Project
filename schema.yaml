@@ -1,5 +1,5 @@
 columns :
-  input_col :
+  input_col:
     fixed acidity : float64
     volatile acidity : float64
     citric acid : float64
