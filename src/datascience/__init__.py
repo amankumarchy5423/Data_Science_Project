@@ -13,6 +13,7 @@ logging.basicConfig(level=logging.INFO,format="%(asctime)s-%(name)s-%(levelname)
 
 pipeline_log = logging.getLogger("Pipeline directroy log")
 utils_dir = logging.getLogger(" in utils directory")
+data_val  = logging.getLogger("data_vaildation..")
 logger = logging.getLogger("data_science")
 
 # pipeline_log.error("testing errror")

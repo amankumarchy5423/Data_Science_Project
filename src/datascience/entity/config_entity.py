@@ -7,3 +7,13 @@ class data_injection :
     source_url :str
     output_zip :Path
     output : Path
+
+
+
+@dataclass
+class DataValidationfirst():
+    root_dir : Path
+    injuction_data_csv : Path
+    output_report : Path
+    all_schema : dict
+
