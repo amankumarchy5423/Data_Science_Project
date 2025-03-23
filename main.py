@@ -58,3 +58,10 @@ try :
 except Exception as e:
   logger.exception(e)
   raise e
+
+STAGE6 = "LOADING WEBSITE"
+try :
+  os.system("python app.py")
+except Exception as e :
+  logger.exception(e)
+  raise e

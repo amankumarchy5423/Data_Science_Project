@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('static/assets/img/form-v9.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-predict, .btn-train {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .btn-predict {
+            background-color: #4A90E2;
+            color: white;
+        }
+        .btn-predict:hover {
+            background-color: #357ABD;
+        }
+        .btn-train {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-train:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Wine Quality Prediction</h2>
+            <form action="/predict" method="post">
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="fixed_acidity" class="form-label">Fixed Acidity:</label>
+                        <input type="text" name="fixed_acidity" id="fixed_acidity" class="form-control" placeholder="Enter Fixed Acidity" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="volatile_acidity" class="form-label">Volatile Acidity:</label>
+                        <input type="text" name="volatile_acidity" id="volatile_acidity" class="form-control" placeholder="Enter Volatile Acidity" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="citric_acid" class="form-label">Citric Acid:</label>
+                        <input type="text" name="citric_acid" id="citric_acid" class="form-control" placeholder="Enter Citric Acid" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="residual_sugar" class="form-label">Residual Sugar:</label>
+                        <input type="text" name="residual_sugar" id="residual_sugar" class="form-control" placeholder="Enter Residual Sugar" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="chlorides" class="form-label">Chlorides:</label>
+                        <input type="text" name="chlorides" id="chlorides" class="form-control" placeholder="Enter Chlorides" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="free_sulfur_dioxide" class="form-label">Free Sulfur Dioxide:</label>
+                        <input type="text" name="free_sulfur_dioxide" id="free_sulfur_dioxide" class="form-control" placeholder="Enter Free Sulfur Dioxide" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="total_sulfur_dioxide" class="form-label">Total Sulfur Dioxide:</label>
+                        <input type="text" name="total_sulfur_dioxide" id="total_sulfur_dioxide" class="form-control" placeholder="Enter Total Sulfur Dioxide" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="density" class="form-label">Density:</label>
+                        <input type="text" name="density" id="density" class="form-control" placeholder="Enter Density" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="pH" class="form-label">pH:</label>
+                        <input type="text" name="pH" id="pH" class="form-control" placeholder="Enter pH Level" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sulphates" class="form-label">Sulphates:</label>
+                        <input type="text" name="sulphates" id="sulphates" class="form-control" placeholder="Enter Sulphates" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label for="alcohol" class="form-label">Alcohol:</label>
+                        <input type="text" name="alcohol" id="alcohol" class="form-control" placeholder="Enter Alcohol Content" required>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-predict">Predict</button>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-train model_train">Train</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
