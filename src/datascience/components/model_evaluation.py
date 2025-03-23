@@ -11,28 +11,6 @@ from src.datascience import logger
 from urllib.parse import urlparse
 
 
-
-# os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/amankumarchy5423/Data_Science_Project.mlflow"
-# os.environ["MLFLOW_USER_NAME"] = "amankumarchy5423"
-# os.environ["mlflow_access_key"] = "fd9510442c2afa0f5e934968756914c32994db8f"
-# os.environ["MLFLOW_TRACKING_USERNAME"] = "amankumarchy5423"
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = "fd9510442c2afa0f5e934968756914c32994db8f"
-
-# mlflow.set_tracking_uri(uri="https://dagshub.com/amankumarchy5423/Data_Science_Project.mlflow")
-
-# mlflow.set_experiment("Data Science Project")
-
-# mlflow.sklearn.autolog()
-
-# import mlflow.models
-# import mlflow.models.signature
-import os
-import mlflow
-
-os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/amankumarchy5423/Data_Science_Project.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"] = "amankumarchy5423"
-os.environ["MLFLOW_TRACKING_PASSWORD"] = "a8ae122e69d9ce92d4987389ddda7725f092af7c"
-
 mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
 
 print("Checking MLflow authentication...")
