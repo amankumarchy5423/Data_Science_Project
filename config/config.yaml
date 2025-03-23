@@ -20,3 +20,10 @@ model_train :
   train_data : data/data_transformation/train.csv
   test_data : data/data_transformation/test.csv
   model_out : models/model.pkl
+
+model_evaluation :
+  root_dir : data/model_evaluation
+  model_path : models/model.pkl
+  test_data : data/data_transformation/test.csv
+  output_file : data/model_evaluation/metrices.json
+

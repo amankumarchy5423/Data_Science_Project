@@ -32,3 +32,13 @@ class model_train_dataclass:
     l1_ratio : float
     input_col : None
     output_col :None
+
+
+@dataclass
+class model_evaluation_dataclass :
+    model : Path
+    test_data : Path
+    root_dir : Path
+    output_file : Path
+    x_colm : None
+    y_colm : None

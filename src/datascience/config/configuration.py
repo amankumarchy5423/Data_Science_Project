@@ -4,6 +4,7 @@ from src.datascience.entity.config_entity import data_injection
 from src.datascience.entity.config_entity import DataValidationfirst
 from src.datascience.entity.config_entity import data_trans_dataclass
 from src.datascience.entity.config_entity import model_train_dataclass
+from src.datascience.entity.config_entity import model_evaluation_dataclass
 
 
 class data_manager():
@@ -96,5 +97,30 @@ class model_train_dataload:
         )
 
         
+
+class model_evaluation_loadyaml:
+    def __init__(self,
+                 config= CONFIG_YAML_FILE_PATH,
+                 params = PARAM_YAML_FILE_PATH,
+                 schema =SCHEMA_YAML_FILE_PATH
+                 ):
+        self.config = load_yaml(config)
+        self.params = load_yaml(params)
+        self.schema = load_yaml(schema)
+
+        self.temp = self.config.model_evaluation
+
+        create_directory([self.temp['root_dir']])
+
+    def model_evaluation_entity(self) -> model_evaluation_dataclass :
+        return model_evaluation_dataclass(
+            model= self.temp['model_path'],
+            test_data = self.temp['test_data'],
+            root_dir = self.temp['root_dir'],
+            output_file = self.temp['output_file'],
+            x_colm= self.schema.columns['input_col'].keys(),
+            y_colm= self.schema.columns['output_col'].keys()
+        )
+        pass
         
         
